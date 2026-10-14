@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d12">
+  <meta name="description" content="WR AI, il tuo assistente personale per la moto.">
+  <title>WR AI — Motorcycle Assistant</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="WR AI Home">
+        <div class="brand-mark">WR<span>AI</span></div>
+        <div class="brand-description">
+          <strong>WR AI</strong>
+          <span>MOTORCYCLE INTELLIGENCE</span>
+        </div>
+      </a>
+
+```
+  <div class="connection-status">
+    <span class="status-dot"></span>
+    <span id="connection-label">CONNESSIONE IN ATTESA</span>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="eyebrow">
+      <span class="eyebrow-line"></span>
+      YOUR PERSONAL RIDING ASSISTANT
+    </div>
+
+    <h1>La tua moto.<br><span>La tua intelligenza.</span></h1>
+
+    <p class="hero-description">
+      Un assistente personale progettato per accompagnarti
+      nella tua passione per le due ruote.
+    </p>
+  </section>
+
+  <section class="assistant-card" aria-labelledby="assistant-title">
+    <div class="card-heading">
+      <div>
+        <span class="section-label">VOICE INTERFACE</span>
+        <h2 id="assistant-title">Parla con WR</h2>
+      </div>
+
+      <span class="version-tag">WR / 01</span>
+    </div>
+
+    <div class="voice-area">
+      <div class="voice-orbit orbit-one"></div>
+      <div class="voice-orbit orbit-two"></div>
+
+      <button
+        id="voice-button"
+        class="voice-button"
+        type="button"
+        aria-label="Avvia il riconoscimento vocale"
+      >
+        <span class="microphone-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <rect x="9" y="3" width="6" height="12" rx="3"
+              stroke="currentColor" stroke-width="1.8"/>
+            <path d="M5.5 11.5a6.5 6.5 0 0 0 13 0"
+              stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round"/>
+            <path d="M12 18v3m-4 0h8"
+              stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round"/>
+          </svg>
+        </span>
+      </button>
+
+      <div id="voice-status" class="voice-status" aria-live="polite">
+        PRONTO ALL'ASCOLTO
+      </div>
+
+      <p class="voice-hint">
+        Premi il pulsante per parlare con il tuo assistente
+      </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="conversation-heading">
+      <div>
+        <span class="section-label">LIVE SESSION</span>
+        <h3>Conversazione</h3>
+      </div>
+
+      <button id="clear-button" class="text-button" type="button">
+        Cancella
+      </button>
+    </div>
+
+    <div
+      id="conversation"
+      class="conversation"
+      role="log"
+      aria-live="polite"
+      aria-relevant="additions"
+    >
+      <div class="welcome-message">
+        <div class="message-avatar">WR</div>
+        <div class="message-content">
+          <span class="message-author">WR AI <span>ASSISTANT</span></span>
+          <p>Ciao! Sono WR AI. Chiedimi quello che vuoi sulla tua moto.</p>
+          <span class="message-time">SESSIONE INIZIATA</span>
+        </div>
+      </div>
+    </div>
+
+    <form id="chat-form" class="chat-form">
+      <label class="sr-only" for="message-input">
+        Scrivi una domanda
+      </label>
+
+      <input
+        id="message-input"
+        type="text"
+        placeholder="Scrivi la tua domanda..."
+        maxlength="4000"
+        autocomplete="off"
+        required
+      >
+
+      <button id="send-button" type="submit" aria-label="Invia domanda">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 12 20 4l-5 16-3-7-8-1Z"
+            stroke="currentColor" stroke-width="1.8"
+            stroke-linejoin="round"/>
+          <path d="m12 13 8-9"
+            stroke="currentColor" stroke-width="1.8"/>
+        </svg>
+      </button>
+    </form>
+
+    <p id="error-message" class="error-message" role="alert"></p>
+
+    <div class="suggestions">
+      <span class="section-label">PROVA A CHIEDERMI</span>
+
+      <div class="suggestion-list">
+        <button type="button" class="suggestion">
+          Quanto olio per 5 litri al 2,2%?
+        </button>
+
+        <button type="button" class="suggestion">
+          Perché la moto borbotta in accelerazione?
+        </button>
+
+        <button type="button" class="suggestion">
+          Come preparo la moto per un'uscita?
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="bike-card">
+    <div class="bike-icon" aria-hidden="true">WR</div>
+
+    <div class="bike-info">
+      <span class="section-label">IL TUO GARAGE</span>
+      <h2>Husqvarna WR 125</h2>
+      <p>2009 · 2 TEMPI · MODIFICATA</p>
+    </div>
+
+    <div class="bike-badge">125 <span>2T</span></div>
+  </section>
+
+  <div class="safety-note">
+    <span class="safety-symbol">!</span>
+    <p>
+      Utilizza WR AI e configura i comandi vocali da fermo.
+      Durante la guida mantieni sempre l'attenzione sulla strada.
+    </p>
+  </div>
+</main>
+
+<footer class="footer">
+  <span>WR AI © 2026</span>
+  <span>BUILT FOR THE RIDE.</span>
+</footer>
+```
+
+  </div>
+</body>
+</html>
